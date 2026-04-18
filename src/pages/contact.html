@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pelissari — Contact</title>
+
+  <!-- Satoshi — primary display + body face -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet" />
+
+  <!-- Poppins — label + micro face -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../styles/global.css" />
+</head>
+<body>
+  <div class="page-shell">
+
+    <header class="site-header" id="top">
+      <div class="container">
+        <div class="site-header__inner">
+          <a href="/#top" class="wordmark" aria-label="Pelissari home">PELISSARI</a>
+
+          <!-- Desktop nav -->
+          <nav class="site-nav" aria-label="Primary">
+            <a class="site-nav__link" href="/work">Work</a>
+            <a class="site-nav__link" href="/about">About</a>
+            <a class="site-nav__link is-active" href="/contact">Contact</a>
+          </nav>
+
+          <!-- Mobile trigger -->
+          <button class="nav-mobile-trigger" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-drawer">
+            <span class="nav-mobile-trigger__bars" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile drawer -->
+    <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+      <div class="nav-drawer__overlay"></div>
+      <div class="nav-drawer__panel">
+        <button class="nav-drawer__close" aria-label="Close navigation">&#x2715;</button>
+        <nav class="nav-drawer__links" aria-label="Mobile">
+          <a class="nav-drawer__link" href="/work">Work</a>
+          <a class="nav-drawer__link" href="/about">About</a>
+          <a class="nav-drawer__link is-active" href="/contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="section section--hero" aria-labelledby="contact-hero-title">
+        <div class="container">
+          <div class="reading-width stack-lg">
+            <p class="type-label">Contact</p>
+            <div class="stack-md">
+              <h1 id="contact-hero-title" class="type-display">
+                Describe the symptom.<br />
+                Not the solution.
+              </h1>
+              <div class="signature-rule" aria-hidden="true"></div>
+            </div>
+            <p class="type-body reading-width--wide">
+              Most teams come in talking about speed, UX, or communication. Often the real issue is that the system has become unreadable.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DIAGNOSTIC FORM -->
+      <section class="section" aria-labelledby="contact-form-title">
+        <div class="container">
+          <article class="surface-module surface-module--intake stack-lg">
+            <div class="section-heading stack-md reading-width reading-width--wide">
+              <p class="type-label">Diagnostic Intake</p>
+              <h2 id="contact-form-title" class="type-h1">What keeps happening?</h2>
+              <p class="type-body">Use the form below to describe the recurring pattern, where it appears, and what the team currently believes the problem is.</p>
+            </div>
+
+            <form class="stack-md" novalidate>
+
+              <label class="field stack-xs">
+                <span class="type-label">The recurring issue is</span>
+                <div class="input-shell input-shell--textarea">
+                  <textarea class="form-control form-control--textarea" name="recurring-issue" placeholder="The recurring issue is..."></textarea>
+                </div>
+              </label>
+
+              <div class="module-grid module-grid--two">
+                <label class="field stack-xs">
+                  <span class="type-label">Where it shows up</span>
+                  <div class="input-shell">
+                    <input class="form-control" type="text" name="location" placeholder="Product flow, service operation, internal coordination..." />
+                  </div>
+                </label>
+
+                <label class="field stack-xs">
+                  <span class="type-label">What the team thinks the problem is</span>
+                  <div class="input-shell">
+                    <input class="form-control" type="text" name="team-diagnosis" placeholder="Communication, speed, staffing, tooling..." />
+                  </div>
+                </label>
+              </div>
+
+              <!-- Feedback states — hidden by default, toggled via JS on submission -->
+              <div class="feedback-error" id="form-error" hidden>
+                <div>
+                  <p class="feedback-error__headline">Submission failed</p>
+                  <p class="feedback-error__message">Please try again or email jp@jppelissari.com directly.</p>
+                </div>
+              </div>
+
+              <div class="feedback-success" id="form-success" hidden>
+                <div>
+                  <p class="feedback-success__headline">Request received</p>
+                  <p class="feedback-success__message">I'll respond within 48 hours.</p>
+                </div>
+              </div>
+
+              <div class="cluster cluster--actions">
+                <button class="btn btn-primary" type="submit">Send request</button>
+              </div>
+            </form>
+
+            <p class="type-micro reading-width reading-width--wide">
+              Best fit: service operations, product workflows, internal tools, support systems, and experience design under complexity.
+            </p>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__grid">
+          <div class="stack-sm">
+            <span class="wordmark">PELISSARI</span>
+            <p class="type-micro">New York City — 2026</p>
+            <p class="type-micro">Designing systems for execution, clarity, and trust.</p>
+          </div>
+          <nav class="site-footer__nav" aria-label="Footer">
+            <a class="site-nav__link" href="/work">Work</a>
+            <a class="site-nav__link" href="/about">About</a>
+            <a class="site-nav__link is-active" href="/contact">Contact</a>
+          </nav>
+          <a class="type-micro site-footer__email" href="mailto:jp@jppelissari.com">jp@jppelissari.com</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Mobile nav
+    const trigger = document.querySelector('.nav-mobile-trigger');
+    const drawer  = document.querySelector('.nav-drawer');
+    const close   = document.querySelector('.nav-drawer__close');
+    const overlay = document.querySelector('.nav-drawer__overlay');
+
+    function openDrawer() {
+      drawer.classList.add('is-open');
+      drawer.setAttribute('aria-hidden', 'false');
+      trigger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden', 'true');
+      trigger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    trigger.addEventListener('click', openDrawer);
+    close.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeDrawer();
+    });
+
+    // Scrolled header state
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', function() {
+      header.classList.toggle('is-scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    // Form submit — POST JSON to Vercel serverless function /api/contact
+    const form = document.querySelector('form');
+    const successEl = document.getElementById('form-success');
+    const errorEl   = document.getElementById('form-error');
+    const submitBtn = form.querySelector('[type="submit"]');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Reset any prior feedback on re-submission
+      successEl.hidden = true;
+      errorEl.hidden   = true;
+      submitBtn.classList.add('is-loading');
+      submitBtn.disabled = true;
+
+      var payload = {
+        'recurring-issue': form.querySelector('[name="recurring-issue"]').value.trim(),
+        'location':        form.querySelector('[name="location"]').value.trim(),
+        'team-diagnosis':  form.querySelector('[name="team-diagnosis"]').value.trim()
+      };
+
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(function(res) {
+        return res.json().then(function(json) {
+          return { ok: res.ok, json: json };
+        });
+      })
+      .then(function(result) {
+        submitBtn.classList.remove('is-loading');
+        submitBtn.disabled = false;
+        if (result.ok) {
+          successEl.hidden = false;
+          form.reset();
+        } else {
+          errorEl.hidden = false;
+        }
+      })
+      .catch(function() {
+        submitBtn.classList.remove('is-loading');
+        submitBtn.disabled = false;
+        errorEl.hidden = false;
+      });
+    });
+  </script>
+
+</body>
+</html>

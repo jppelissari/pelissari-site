@@ -1,0 +1,197 @@
+/* ============================================================
+   LAYOUTS — CONTAINERS, SECTIONS, GRIDS, STACKS
+   All spacing references use DS canonical --spacing-* naming.
+   ============================================================ */
+
+
+/* ----------------------------------------------------------
+   PAGE SHELL
+---------------------------------------------------------- */
+
+.page-shell {
+  min-height: 100vh;
+  background: var(--color-background-base);
+}
+
+
+/* ----------------------------------------------------------
+   CONTAINER
+---------------------------------------------------------- */
+
+.container {
+  width: min(calc(100% - (var(--margin-desktop) * 2)), var(--content-max));
+  margin-inline: auto;
+}
+
+
+/* ----------------------------------------------------------
+   SECTIONS
+---------------------------------------------------------- */
+
+.section {
+  padding-block: var(--spacing-96);
+}
+
+.section--hero {
+  padding-top: var(--spacing-120);
+  padding-bottom: var(--spacing-96);
+}
+
+
+/* ----------------------------------------------------------
+   STACK UTILITIES
+   Vertical spacing via lobotomized owl. No flexbox required.
+---------------------------------------------------------- */
+
+.stack-xs > * + * { margin-top: var(--spacing-8); }
+.stack-sm > * + * { margin-top: var(--spacing-16); }
+.stack-md > * + * { margin-top: var(--spacing-24); }
+.stack-lg > * + * { margin-top: var(--spacing-32); }
+.stack-xl > * + * { margin-top: var(--spacing-48); }
+
+
+/* ----------------------------------------------------------
+   CLUSTER UTILITIES
+   Horizontal flex groups.
+---------------------------------------------------------- */
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cluster--signals { gap: var(--spacing-16); }
+.cluster--actions { gap: var(--spacing-16); }
+
+
+/* ----------------------------------------------------------
+   MODULE GRID
+---------------------------------------------------------- */
+
+.module-grid {
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+.module-grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.module-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+
+/* ----------------------------------------------------------
+   READING WIDTH CONSTRAINTS
+---------------------------------------------------------- */
+
+.reading-width       { max-width: 760px; }
+.reading-width--hero { max-width: 620px; }
+.reading-width--wide { max-width: 720px; }
+
+
+/* ----------------------------------------------------------
+   SECTION HEADING
+---------------------------------------------------------- */
+
+.section-heading {
+  max-width: 760px;
+}
+
+
+/* ----------------------------------------------------------
+   HOME HERO
+---------------------------------------------------------- */
+
+.home-hero__content {
+  max-width: 760px;
+}
+
+
+/* ----------------------------------------------------------
+   RESPONSIVE — TABLET (≤1024px)
+---------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .module-grid--three,
+  .module-grid--two,
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .surface-module--diagnostic {
+    min-height: auto;
+  }
+
+  .site-footer__email {
+    justify-self: start;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   RESPONSIVE — MOBILE (≤768px)
+---------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  /* container */
+  .container {
+    width: calc(100% - (var(--margin-mobile) * 2));
+  }
+
+  /* sections */
+  .section {
+    padding-block: var(--spacing-64);
+  }
+
+  .section--hero {
+    padding-top: var(--spacing-96);
+    padding-bottom: var(--spacing-64);
+  }
+
+  /* header */
+  .site-header__inner {
+    min-height: 64px;
+    justify-content: space-between;
+  }
+
+  /* desktop nav hidden, mobile trigger shown */
+  .site-nav {
+    display: none;
+  }
+
+  .nav-mobile-trigger {
+    display: flex;
+  }
+
+  /* panels */
+  .surface-module,
+  .proof-panel {
+    padding: var(--spacing-24);
+  }
+
+  .inverse-panel {
+    padding: var(--spacing-32) var(--spacing-24);
+  }
+
+  /* cluster gaps */
+  .cluster--signals,
+  .cluster--actions {
+    gap: var(--spacing-8);
+  }
+
+  /* type scale — responsive overrides for display sizes only */
+  .type-display {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .type-h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+}

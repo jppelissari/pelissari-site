@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pelissari — About</title>
+
+  <!-- Satoshi — primary display + body face -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet" />
+
+  <!-- Poppins — label + micro face -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../styles/global.css" />
+</head>
+<body>
+  <div class="page-shell">
+
+    <header class="site-header" id="top">
+      <div class="container">
+        <div class="site-header__inner">
+          <a href="/#top" class="wordmark" aria-label="Pelissari home">PELISSARI</a>
+
+          <!-- Desktop nav -->
+          <nav class="site-nav" aria-label="Primary">
+            <a class="site-nav__link" href="/work">Work</a>
+            <a class="site-nav__link is-active" href="/about">About</a>
+            <a class="site-nav__link" href="/contact">Contact</a>
+          </nav>
+
+          <!-- Mobile trigger -->
+          <button class="nav-mobile-trigger" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-drawer">
+            <span class="nav-mobile-trigger__bars" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile drawer -->
+    <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+      <div class="nav-drawer__overlay"></div>
+      <div class="nav-drawer__panel">
+        <button class="nav-drawer__close" aria-label="Close navigation">&#x2715;</button>
+        <nav class="nav-drawer__links" aria-label="Mobile">
+          <a class="nav-drawer__link" href="/work">Work</a>
+          <a class="nav-drawer__link is-active" href="/about">About</a>
+          <a class="nav-drawer__link" href="/contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="section section--hero" aria-labelledby="about-hero-title">
+        <div class="container">
+          <div class="reading-width stack-lg">
+            <p class="type-label">About</p>
+            <div class="stack-md">
+              <h1 id="about-hero-title" class="type-display">
+                Eight years operating in environments<br />
+                where the margin for error<br />
+                was effectively zero.
+              </h1>
+              <div class="signature-rule" aria-hidden="true"></div>
+            </div>
+            <p class="type-body reading-width--wide">
+              That background didn't give me stories. It gave me a model for seeing where systems break under pressure.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- BACKGROUND MODULES -->
+      <section class="section" aria-labelledby="about-structure-title">
+        <h2 id="about-structure-title" class="sr-only">Background</h2>
+        <div class="container">
+          <div class="module-grid module-grid--three">
+            <article class="surface-module stack-md">
+              <p class="type-label">Where this came from</p>
+              <h3 class="type-h2">Operations first</h3>
+              <p class="type-body type-body--secondary">I didn't begin in product. I began in live operations — where coordination failure is immediate, visible, and expensive.</p>
+            </article>
+
+            <article class="surface-module stack-md">
+              <p class="type-label">What operations taught me</p>
+              <h3 class="type-h2">Legibility under pressure</h3>
+              <p class="type-body type-body--secondary">Execution can be happening perfectly while the experience still fails. That happens when the system loses legibility.</p>
+            </article>
+
+            <article class="surface-module stack-md">
+              <p class="type-label">What I bring into design</p>
+              <h3 class="type-h2">Structure in motion</h3>
+              <p class="type-body type-body--secondary">I work on the layer where perception, action, and structure meet — especially in systems where users follow up and operators improvise.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROOF STRIP -->
+      <section class="section" aria-labelledby="about-proof-title">
+        <div class="container">
+          <article class="inverse-panel stack-lg">
+            <p class="type-label type-label--inverse">Proof Strip</p>
+            <h2 id="about-proof-title" class="type-h1 type-h1--inverse">
+              Luxury hospitality taught me what invisible failure costs. UX training gave me the tools to model it. The work now is designing systems that stay legible under pressure.
+            </h2>
+            <div class="cluster cluster--actions">
+              <a href="/work" class="btn btn-primary">View case studies</a>
+              <a href="/contact" class="btn btn-ghost btn-ghost--inverse">Describe your system</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__grid">
+          <div class="stack-sm">
+            <span class="wordmark">PELISSARI</span>
+            <p class="type-micro">New York City — 2026</p>
+            <p class="type-micro">Designing systems for execution, clarity, and trust.</p>
+          </div>
+          <nav class="site-footer__nav" aria-label="Footer">
+            <a class="site-nav__link" href="/work">Work</a>
+            <a class="site-nav__link is-active" href="/about">About</a>
+            <a class="site-nav__link" href="/contact">Contact</a>
+          </nav>
+          <a class="type-micro site-footer__email" href="mailto:jp@jppelissari.com">jp@jppelissari.com</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    const trigger = document.querySelector('.nav-mobile-trigger');
+    const drawer  = document.querySelector('.nav-drawer');
+    const close   = document.querySelector('.nav-drawer__close');
+    const overlay = document.querySelector('.nav-drawer__overlay');
+
+    function openDrawer() {
+      drawer.classList.add('is-open');
+      drawer.setAttribute('aria-hidden', 'false');
+      trigger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden', 'true');
+      trigger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    trigger.addEventListener('click', openDrawer);
+    close.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeDrawer();
+    });
+
+    // Scrolled header state
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', function() {
+      header.classList.toggle('is-scrolled', window.scrollY > 8);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pelissari — Home</title>
+
+  <!-- Satoshi — primary display + body face -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet" />
+
+  <!-- Poppins — label + micro face -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../styles/global.css" />
+</head>
+<body>
+  <div class="page-shell">
+
+    <header class="site-header" id="top">
+      <div class="container">
+        <div class="site-header__inner">
+          <a href="#top" class="wordmark" aria-label="Pelissari home">PELISSARI</a>
+
+          <!-- Desktop nav -->
+          <nav class="site-nav" aria-label="Primary">
+            <a class="site-nav__link is-active" href="#work">Work</a>
+            <a class="site-nav__link" href="#about">About</a>
+            <a class="site-nav__link" href="#contact">Contact</a>
+          </nav>
+
+          <!-- Mobile trigger -->
+          <button class="nav-mobile-trigger" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-drawer">
+            <span class="nav-mobile-trigger__bars" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile drawer -->
+    <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+      <div class="nav-drawer__overlay"></div>
+      <div class="nav-drawer__panel">
+        <button class="nav-drawer__close" aria-label="Close navigation">&#x2715;</button>
+        <nav class="nav-drawer__links" aria-label="Mobile">
+          <a class="nav-drawer__link is-active" href="#work">Work</a>
+          <a class="nav-drawer__link" href="#about">About</a>
+          <a class="nav-drawer__link" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="section section--hero" aria-labelledby="hero-title">
+        <div class="container">
+          <div class="home-hero__content stack-lg">
+            <p class="type-label">System Design for Execution, Visibility &amp; Trust</p>
+
+            <div class="stack-md">
+              <h1 class="type-display" id="hero-title">
+                Your team is doing the work.<br />
+                Your system makes it look like it isn't.
+              </h1>
+              <div class="signature-rule" aria-hidden="true"></div>
+            </div>
+
+            <p class="type-body reading-width reading-width--hero">
+              I redesign the layer between execution and perception — so users stop compensating for what the system fails to show.
+            </p>
+
+            <div class="cluster cluster--signals" aria-label="Core system signals">
+              <span class="signal-chip">Execution happening</span>
+              <span class="signal-chip">Trust eroding</span>
+              <span class="signal-chip">Signal missing</span>
+            </div>
+
+            <div class="cluster cluster--actions">
+              <a href="#work" class="btn btn-primary">View case studies</a>
+              <a href="#contact" class="btn btn-ghost">Describe your system</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STRUCTURAL INTERVENTIONS -->
+      <section class="section" aria-labelledby="interventions-title">
+        <div class="container">
+          <div class="section-heading stack-md">
+            <p class="type-label">Structural Interventions</p>
+            <h2 id="interventions-title" class="type-h1">What I actually help fix</h2>
+          </div>
+
+          <div class="module-grid module-grid--three">
+            <article class="surface-module surface-module--diagnostic stack-md">
+              <p class="type-label">01</p>
+              <h3 class="type-h2">System Diagnosis</h3>
+              <div class="signature-rule" aria-hidden="true"></div>
+              <p class="type-body">When execution is happening, but trust is still collapsing.</p>
+              <p class="type-body type-body--secondary">
+                I identify where the system loses legibility: follow-ups, escalations, duplicated effort, and perception gaps that make functioning operations feel broken.
+              </p>
+              <a href="#contact" class="text-link">When this matters<span aria-hidden="true"> →</span></a>
+            </article>
+
+            <article class="surface-module surface-module--diagnostic stack-md">
+              <p class="type-label">02</p>
+              <h3 class="type-h2">Workflow Redesign</h3>
+              <div class="signature-rule" aria-hidden="true"></div>
+              <p class="type-body">When the process exists, but reality doesn't fit it.</p>
+              <p class="type-body type-body--secondary">
+                I redesign flows around real conditions, dependencies, decision points, and breakdown patterns — not idealized process maps.
+              </p>
+              <a href="#contact" class="text-link">When this matters<span aria-hidden="true"> →</span></a>
+            </article>
+
+            <article class="surface-module surface-module--diagnostic stack-md">
+              <p class="type-label">03</p>
+              <h3 class="type-h2">Execution Layer Design</h3>
+              <div class="signature-rule" aria-hidden="true"></div>
+              <p class="type-body">When users need the system to show what's happening, not just do it.</p>
+              <p class="type-body type-body--secondary">
+                I design the visibility, state logic, and structural signals that make progress legible to the user and usable to the operator.
+              </p>
+              <a href="#contact" class="text-link">When this matters<span aria-hidden="true"> →</span></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SELECTED WORK -->
+      <section class="section" id="work" aria-labelledby="work-title">
+        <div class="container stack-xl">
+          <div class="section-heading stack-md reading-width">
+            <p class="type-label">Selected Work</p>
+            <h2 id="work-title" class="type-h1">The pattern behind the work</h2>
+            <p class="type-body">Two case studies. Two sides of the same structural failure.</p>
+          </div>
+
+          <div class="stack-lg">
+            <article class="proof-panel stack-md">
+              <div class="proof-panel__meta">
+                <p class="type-label">Visibility Systems — 2024</p>
+              </div>
+              <h3 class="type-h1">Aethel</h3>
+              <div class="signature-rule" aria-hidden="true"></div>
+              <p class="type-body reading-width">The service was working. The guest couldn't see it.</p>
+              <p class="type-body type-body--secondary reading-width">Execution existed. Signal didn't.</p>
+              <a href="#" class="text-link">Read case study<span aria-hidden="true"> →</span></a>
+            </article>
+
+            <article class="proof-panel stack-md">
+              <div class="proof-panel__meta">
+                <p class="type-label">Decision Systems — 2024</p>
+                <span class="status-chip">In Development</span>
+              </div>
+              <h3 class="type-h1">Arrival Control Engine</h3>
+              <div class="signature-rule" aria-hidden="true"></div>
+              <p class="type-body reading-width">Data was available. There was no structure for deciding.</p>
+              <p class="type-body type-body--secondary reading-width">Information existed. Action logic didn't.</p>
+              <a href="#" class="text-link">Read case study<span aria-hidden="true"> →</span></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT / APPROACH -->
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="container">
+          <article class="inverse-panel stack-lg">
+            <p class="type-label type-label--inverse">Approach</p>
+            <div class="stack-md">
+              <h2 id="about-title" class="type-display type-display--inverse">
+                Most systems don't fail because work stops.<br />
+                They fail because no one can read what the system is doing.
+              </h2>
+              <div class="signature-rule signature-rule--inverse" aria-hidden="true"></div>
+            </div>
+            <p class="type-body type-body--inverse reading-width">
+              That failure appears as follow-up, escalation, duplicated effort, operator hesitation, and trust loss. I work on the structure underneath that pattern.
+            </p>
+            <a href="/about" class="text-link text-link--inverse">About the approach<span aria-hidden="true"> →</span></a>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT / INTAKE -->
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="container">
+          <article class="surface-module surface-module--intake stack-lg">
+            <div class="section-heading stack-md reading-width reading-width--wide">
+              <p class="type-label">Diagnostic Intake</p>
+              <h2 id="contact-title" class="type-h1">What's breaking in your system?</h2>
+              <p class="type-body">
+                Describe the symptom — not the solution. I'll tell you if the issue is visibility, workflow structure, decision logic, or execution design.
+              </p>
+            </div>
+
+            <!-- Teaser fields — navigational only, data not captured here -->
+            <!-- Full submission handled on contact.html -->
+            <div class="stack-md">
+              <label class="field stack-xs">
+                <span class="type-label">The pattern we keep seeing is</span>
+                <div class="input-shell input-shell--textarea">
+                  <textarea class="form-control form-control--textarea" placeholder="The recurring issue is..." aria-label="Describe the recurring issue"></textarea>
+                </div>
+              </label>
+
+              <div class="module-grid module-grid--two">
+                <label class="field stack-xs">
+                  <span class="type-label">Where it shows up</span>
+                  <div class="input-shell">
+                    <input class="form-control" type="text" placeholder="Product flow, service operations, internal coordination..." aria-label="Where the issue shows up" />
+                  </div>
+                </label>
+
+                <label class="field stack-xs">
+                  <span class="type-label">What the team thinks the problem is</span>
+                  <div class="input-shell">
+                    <input class="form-control" type="text" placeholder="Communication problem, speed problem, staffing problem..." aria-label="What the team believes the problem is" />
+                  </div>
+                </label>
+              </div>
+
+              <div class="cluster cluster--actions">
+                <a href="/contact" class="btn btn-primary">Send diagnosis request</a>
+              </div>
+            </div>
+
+            <p class="type-micro reading-width reading-width--wide">
+              Best for: service operations, product flows, coordination failures, internal tools, and experience systems.
+            </p>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__grid">
+          <div class="stack-sm">
+            <span class="wordmark">PELISSARI</span>
+            <p class="type-micro">New York City — 2026</p>
+            <p class="type-micro">Designing systems for execution, clarity, and trust.</p>
+          </div>
+          <nav class="site-footer__nav" aria-label="Footer">
+            <a class="site-nav__link" href="#work">Work</a>
+            <a class="site-nav__link" href="#about">About</a>
+            <a class="site-nav__link" href="#contact">Contact</a>
+          </nav>
+          <a class="type-micro site-footer__email" href="mailto:jp@jppelissari.com">jp@jppelissari.com</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Mobile nav toggle
+    const trigger = document.querySelector('.nav-mobile-trigger');
+    const drawer  = document.querySelector('.nav-drawer');
+    const close   = document.querySelector('.nav-drawer__close');
+    const overlay = document.querySelector('.nav-drawer__overlay');
+
+    function openDrawer() {
+      drawer.classList.add('is-open');
+      drawer.setAttribute('aria-hidden', 'false');
+      trigger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden', 'true');
+      trigger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    trigger.addEventListener('click', openDrawer);
+    close.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeDrawer();
+    });
+
+    // Scrolled header state
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', function() {
+      header.classList.toggle('is-scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    // Home intake fields are teaser only — submission routes to contact.html
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "outputDirectory": "src",
+  "buildCommand": "",
+  "redirects": [
+    { "source": "/pages/home.html",    "destination": "/",        "permanent": true },
+    { "source": "/pages/work.html",    "destination": "/work",    "permanent": true },
+    { "source": "/pages/about.html",   "destination": "/about",   "permanent": true },
+    { "source": "/pages/contact.html", "destination": "/contact", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/",        "destination": "/pages/home.html"    },
+    { "source": "/work",    "destination": "/pages/work.html"    },
+    { "source": "/about",   "destination": "/pages/about.html"   },
+    { "source": "/contact", "destination": "/pages/contact.html" }
+  ]
+}
