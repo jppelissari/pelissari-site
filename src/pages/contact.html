@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pelissari — Contact</title>
 
-  <meta name="description" content="Describe the recurring symptom. Get a structural diagnosis of where your system is losing legibility." />
+  <meta name="description" content="Professional contact page for opportunities, portfolio conversations, and recruiter outreach." />
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://jppelissari.com/contact" />
   <meta property="og:title"       content="Contact — Pelissari" />
-  <meta property="og:description" content="Describe the recurring symptom. Get a structural diagnosis of where your system is losing legibility." />
+  <meta property="og:description" content="Professional contact page for opportunities, portfolio conversations, and recruiter outreach." />
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -40,7 +40,6 @@
           <nav class="site-nav" aria-label="Primary">
             <a class="site-nav__link" href="/work">Work</a>
             <a class="site-nav__link" href="/about">About</a>
-            <a class="site-nav__link is-active" href="/contact">Contact</a>
           </nav>
 
           <!-- Mobile trigger -->
@@ -63,7 +62,6 @@
         <nav class="nav-drawer__links" aria-label="Mobile">
           <a class="nav-drawer__link" href="/work">Work</a>
           <a class="nav-drawer__link" href="/about">About</a>
-          <a class="nav-drawer__link is-active" href="/contact">Contact</a>
         </nav>
       </div>
     </div>
@@ -77,74 +75,15 @@
             <p class="type-label">Contact</p>
             <div class="stack-md">
               <h1 id="contact-hero-title" class="type-display">
-                Describe the symptom.<br />
-                Not the solution.
+                Get in touch
               </h1>
               <div class="signature-rule" aria-hidden="true"></div>
             </div>
             <p class="type-body-lg reading-width--wide">
-              Most teams come in talking about speed, UX, or communication. Often the real issue is that the system has become unreadable.
+              For opportunities, portfolio conversations, or professional outreach, email me directly.
             </p>
+            <a href="mailto:josepelissari@jppelissari.com" class="btn btn-primary">josepelissari@jppelissari.com</a>
           </div>
-        </div>
-      </section>
-
-      <!-- DIAGNOSTIC FORM -->
-      <section class="section section--below-hero" aria-labelledby="contact-form-title">
-        <div class="container">
-          <article class="surface-module surface-module--intake stack-lg">
-            <div class="section-heading stack-md reading-width reading-width--wide">
-              <p class="type-label">Diagnostic Intake</p>
-              <h2 id="contact-form-title" class="type-h1">What keeps happening?</h2>
-              <p class="type-body">Use the form below to describe the recurring pattern, where it appears, and what the team currently believes the problem is.</p>
-            </div>
-
-            <form class="stack-md" novalidate>
-
-              <label class="field stack-xs">
-                <span class="type-label">The recurring issue is</span>
-                <div class="input-shell input-shell--textarea">
-                  <textarea class="form-control form-control--textarea" name="recurring-issue" placeholder="The recurring issue is..."></textarea>
-                </div>
-              </label>
-
-              <div class="module-grid module-grid--two">
-                <label class="field stack-xs">
-                  <span class="type-label">Where it shows up</span>
-                  <div class="input-shell">
-                    <input class="form-control" type="text" name="location" placeholder="Product flow, service operation, internal coordination..." />
-                  </div>
-                </label>
-
-                <label class="field stack-xs">
-                  <span class="type-label">What the team thinks the problem is</span>
-                  <div class="input-shell">
-                    <input class="form-control" type="text" name="team-diagnosis" placeholder="Communication, speed, staffing, tooling..." />
-                  </div>
-                </label>
-              </div>
-
-              <!-- Feedback states — hidden by default, toggled via JS on submission -->
-              <div class="feedback-error" id="form-error" hidden>
-                <div>
-                  <p class="feedback-error__headline">Submission failed</p>
-                  <p class="feedback-error__message">Please try again or email josepelissari@jppelissari.com directly.</p>
-                </div>
-              </div>
-
-              <div class="feedback-success" id="form-success" hidden>
-                <div>
-                  <p class="feedback-success__headline">Request received</p>
-                  <p class="feedback-success__message">I'll respond within 48 hours.</p>
-                </div>
-              </div>
-
-              <div class="cluster cluster--actions">
-                <button class="btn btn-primary" type="submit">Send request</button>
-              </div>
-            </form>
-
-          </article>
         </div>
       </section>
 
@@ -161,7 +100,6 @@
           <nav class="site-footer__nav" aria-label="Footer">
             <a class="site-nav__link" href="/work">Work</a>
             <a class="site-nav__link" href="/about">About</a>
-            <a class="site-nav__link is-active" href="/contact">Contact</a>
           </nav>
           <div class="stack-xs">
             <a class="type-micro site-footer__email" href="mailto:josepelissari@jppelissari.com">josepelissari@jppelissari.com</a>
@@ -207,56 +145,6 @@
       header.classList.toggle('is-scrolled', window.scrollY > 8);
     }, { passive: true });
 
-    // Form submit — POST JSON to Vercel serverless function /api/contact
-    const form      = document.querySelector('form');
-    const successEl = document.getElementById('form-success');
-    const errorEl   = document.getElementById('form-error');
-    const submitBtn = form.querySelector('[type="submit"]');
-
-    // Single point of control — prevents success + error ever appearing together
-    function showFeedback(state) {
-      successEl.hidden = (state !== 'success');
-      errorEl.hidden   = (state !== 'error');
-    }
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      showFeedback('none');
-      submitBtn.classList.add('is-loading');
-      submitBtn.disabled = true;
-
-      var payload = {
-        'recurring-issue': form.querySelector('[name="recurring-issue"]').value.trim(),
-        'location':        form.querySelector('[name="location"]').value.trim(),
-        'team-diagnosis':  form.querySelector('[name="team-diagnosis"]').value.trim()
-      };
-
-      fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      })
-      .then(function(res) {
-        return res.json().then(function(json) {
-          return { ok: res.ok, json: json };
-        });
-      })
-      .then(function(result) {
-        submitBtn.classList.remove('is-loading');
-        submitBtn.disabled = false;
-        if (result.ok) {
-          showFeedback('success');
-          form.reset();
-        } else {
-          showFeedback('error');
-        }
-      })
-      .catch(function() {
-        submitBtn.classList.remove('is-loading');
-        submitBtn.disabled = false;
-        showFeedback('error');
-      });
-    });
   </script>
 
 </body>
