@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pelissari — Contact</title>
 
+  <meta name="description" content="Describe the recurring symptom. Get a structural diagnosis of where your system is losing legibility." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://jppelissari.com/contact" />
+  <meta property="og:title"       content="Contact — Pelissari" />
+  <meta property="og:description" content="Describe the recurring symptom. Get a structural diagnosis of where your system is losing legibility." />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
   <!-- Satoshi — primary display + body face -->
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet" />
@@ -70,7 +82,7 @@
               </h1>
               <div class="signature-rule" aria-hidden="true"></div>
             </div>
-            <p class="type-body reading-width--wide">
+            <p class="type-body-lg reading-width--wide">
               Most teams come in talking about speed, UX, or communication. Often the real issue is that the system has become unreadable.
             </p>
           </div>
@@ -78,7 +90,7 @@
       </section>
 
       <!-- DIAGNOSTIC FORM -->
-      <section class="section" aria-labelledby="contact-form-title">
+      <section class="section section--below-hero" aria-labelledby="contact-form-title">
         <div class="container">
           <article class="surface-module surface-module--intake stack-lg">
             <div class="section-heading stack-md reading-width reading-width--wide">
@@ -116,7 +128,7 @@
               <div class="feedback-error" id="form-error" hidden>
                 <div>
                   <p class="feedback-error__headline">Submission failed</p>
-                  <p class="feedback-error__message">Please try again or email jp@jppelissari.com directly.</p>
+                  <p class="feedback-error__message">Please try again or email josepelissari@jppelissari.com directly.</p>
                 </div>
               </div>
 
@@ -132,9 +144,6 @@
               </div>
             </form>
 
-            <p class="type-micro reading-width reading-width--wide">
-              Best fit: service operations, product workflows, internal tools, support systems, and experience design under complexity.
-            </p>
           </article>
         </div>
       </section>
@@ -154,7 +163,10 @@
             <a class="site-nav__link" href="/about">About</a>
             <a class="site-nav__link is-active" href="/contact">Contact</a>
           </nav>
-          <a class="type-micro site-footer__email" href="mailto:jp@jppelissari.com">jp@jppelissari.com</a>
+          <div class="stack-xs">
+            <a class="type-micro site-footer__email" href="mailto:josepelissari@jppelissari.com">josepelissari@jppelissari.com</a>
+            <a class="type-micro" href="https://www.linkedin.com/in/jppelissari/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
         </div>
       </div>
     </footer>
@@ -196,16 +208,20 @@
     }, { passive: true });
 
     // Form submit — POST JSON to Vercel serverless function /api/contact
-    const form = document.querySelector('form');
+    const form      = document.querySelector('form');
     const successEl = document.getElementById('form-success');
     const errorEl   = document.getElementById('form-error');
     const submitBtn = form.querySelector('[type="submit"]');
 
+    // Single point of control — prevents success + error ever appearing together
+    function showFeedback(state) {
+      successEl.hidden = (state !== 'success');
+      errorEl.hidden   = (state !== 'error');
+    }
+
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      // Reset any prior feedback on re-submission
-      successEl.hidden = true;
-      errorEl.hidden   = true;
+      showFeedback('none');
       submitBtn.classList.add('is-loading');
       submitBtn.disabled = true;
 
@@ -229,16 +245,16 @@
         submitBtn.classList.remove('is-loading');
         submitBtn.disabled = false;
         if (result.ok) {
-          successEl.hidden = false;
+          showFeedback('success');
           form.reset();
         } else {
-          errorEl.hidden = false;
+          showFeedback('error');
         }
       })
       .catch(function() {
         submitBtn.classList.remove('is-loading');
         submitBtn.disabled = false;
-        errorEl.hidden = false;
+        showFeedback('error');
       });
     });
   </script>

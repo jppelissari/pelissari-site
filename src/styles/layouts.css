@@ -34,7 +34,13 @@
 
 .section--hero {
   padding-top: var(--spacing-120);
-  padding-bottom: var(--spacing-96);
+  padding-bottom: var(--spacing-64);
+}
+
+/* Use on the first section immediately following a hero section.
+   Reduces top padding to prevent excessive air between hero and content. */
+.section--below-hero {
+  padding-top: var(--spacing-48);
 }
 
 
@@ -149,7 +155,11 @@
 
   .section--hero {
     padding-top: var(--spacing-96);
-    padding-bottom: var(--spacing-64);
+    padding-bottom: var(--spacing-48);
+  }
+
+  .section--below-hero {
+    padding-top: var(--spacing-32);
   }
 
   /* header */

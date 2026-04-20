@@ -28,7 +28,7 @@
 
 .wordmark {
   font-family: var(--font-poppins);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -566,7 +566,7 @@
 }
 
 .surface-module--diagnostic {
-  min-height: 360px;
+  min-height: 280px;
 }
 
 /* intake — form container. No hover elevation. */
@@ -574,6 +574,7 @@
   background: var(--color-background-surface);
   border: 1px solid var(--color-border-default);
   box-shadow: var(--shadow-none);
+  padding: var(--spacing-48);
 }
 
 .surface-module--intake:hover {

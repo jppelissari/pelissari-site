@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!--
+    Pelissari favicon — geometric P monogram
+    Constructed: thick vertical stem + broad D-bowl + tight rectangular counter
+    Optimised for 16px legibility. No background. No effects.
+  -->
+  <path
+    fill="#0F172A"
+    fill-rule="evenodd"
+    d="M 4,4 L 19,4 C 27,4 27,18 19,18 L 11,18 L 11,28 L 4,28 Z
+       M 11,7 L 17,7 C 23,7 23,15 17,15 L 11,15 Z"
+  />
+</svg>
